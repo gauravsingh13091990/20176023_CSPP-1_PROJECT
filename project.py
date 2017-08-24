@@ -1,5 +1,6 @@
 from collections import Counter
 import math
+import os
 """f1 is the file number one"""
 """f2 is the second file we will compare f1 and f2 for plagirism"""
 f1 = open("text2_plagrism.txt")
@@ -10,13 +11,17 @@ print("file1 content with delimeter",x,"file2 content with delimeter",y)
 d1 = []
 d2 = []
 """ remove_delimeters is a function to delete delimeters from file f1 and f2"""
+# way_to_files = os.getcwd()
+# files = os.listdir(way_to_files)
+# filesText = [i for i in files if i.endswith(".txt")]
+# print(filesText)
+# for x in range(len)
 def remove_delimiters (delimiters, s):
     for d in delimiters:
         ind = s.find(d)
         while ind != -1:
             s = s[:ind] + s[ind+1:]
             ind = s.find(d)
-
     return ' '.join(s.split())
 
 
@@ -25,6 +30,7 @@ d_list1= []
 d_list2= []
 for j in x:
     d_list1.append(remove_delimiters(delimiters,j))
+print(d_list1)
 string = " ".join(map(str,d_list1))
 for i in string.split():
 	d1.append(i)
